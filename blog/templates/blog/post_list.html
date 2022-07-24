@@ -13,18 +13,17 @@
         <h3>Autor: strefa kursów</h3>
         <h4>Wszelkie prawa zastrzeżone</h4>
     </div>
+
+    {% for post in posts %}
     <div>
-        <p>To jest akapit</p>
-        <em>To jest znacznik wyróżnionego tekstu</em><br>
-        <strong>Tu jest pogrubiony tekst</strong>
-        <a href="https://strefakursow.pl"><br>LINK</a>
+        <p>opublikowany: {{ post.publish_date }}</p>
+        <h2><a href="">{{ post.title }}</a> </h2>
+        <em>{{ post.text|linebreaksbr }}</em>
     </div>
+    {% endfor %}
+
     <div>
-    <ul>
-        <li>Elementy listy</li>
-        <li>Elementy listy</li>
-        <li>Elementy listy</li>
-    </ul>
+
     </div>
 </body>
 
