@@ -19,7 +19,18 @@ body {
     text-decoration: none;
 }
 
-.date{
+.content {
+    margin-left: 40px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Taviraj', serif;
+}
+
+.date {
     color: dimgrey;
 }
 
+.save {
+    float: right;
+}
