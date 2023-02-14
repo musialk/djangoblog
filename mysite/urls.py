@@ -19,13 +19,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from blog.views import Image, ImageDisplay
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    #path(r'^admin/', admin.site.urls),
+urlpatterns = {
+    path(('admin/'), admin.site.urls),
+    # path(r'^admin/$', admin.site.urls),
     path('', include('blog.urls')),
-    path('image/', Image.as_view(), name='image'),
-    path('image/<int:pk/>', ImageDisplay.as_view(), name='image_display'),
-]
+    path(('image/'), Image.as_view(), name='image'),
+    path(('image/<int:pk/>'), ImageDisplay.as_view(), name='image_display'),
+}
+hendler404 = 'blog.views.error_404_view'
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
