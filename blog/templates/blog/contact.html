@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="post" xmlns="http://www.w3.org/1999/html">
+        <h2><b>{{ post.title }}</b></h2>
+
+        <p>{{ post.text|linebreaksbr }}</p>
+        <br /><br />
+    </div>
+{% endblock %}

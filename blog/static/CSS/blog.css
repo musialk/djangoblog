@@ -5,7 +5,7 @@
     color: #C25100;
     font-family: 'Inter', sans-serif;
     text-decoration: none;
-    width:70%;
+    width:90%;
     border-style: hidden;
 }
 
@@ -181,10 +181,7 @@ h2{
   border-radius:100%;
   background-color:#33353d;
 }
-.copyright-text
-{
-  margin:0;
-}
+
 @media (max-width:991px)
 {
   .site-footer [class^=col-]
@@ -192,18 +189,7 @@ h2{
     margin-bottom:30px;
   }
 }
-@media (max-width:767px)
-{
-  .site-footer
-  {
-    padding-bottom:0;
-  }
-  .site-footer .copyright-text,.site-footer .social-icons
-  {
-    text-align:center;
 
-  }
-}
 .social-icons
 {
   padding-left:0;

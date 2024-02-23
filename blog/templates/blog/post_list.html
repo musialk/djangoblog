@@ -1,14 +1,24 @@
-    {% extends 'blog/base.html' %}
+{% extends 'blog/base.html' %}
 
-    {% block content %}
-        {% for post in posts %}
-        <div class="post">
-            <img src="{{ post.image.url }}" class="img" alt="Obrazek" width="40%"><br>
-            <div class="data">
-            <p>opublikowany: {{ post.published_date }}</p>
-            </div><h2><b><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></b></h2>
-        <br/>
-            <em>{{ post.text|linebreaksbr }}</em><br/>
-        </div>
-        {% endfor %}
-    {% endblock %}
+{% block content %}
+
+{% for post in posts %}
+    <div class="post">
+<!--        {% for post in posts %}-->
+            {% if post.image %}
+                <img src="{{ post.image.url }}">
+            {% endif %}
+            <p>{{ post.content }}</p>
+<!--        {% endfor %}-->
+        <h2><b><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></b></h2>
+        {% if post.content|linebreaks|length <= 10 %}
+            {{ post.content|linebreaks }}
+        {% else %}
+            {{ post.content|truncatewords_html:10 }}
+            <a href="{% url 'post_detail' pk=post.pk %}">Więcej...</a>
+        {% endif %}
+    </div>
+{% endfor %}
+
+{% endblock %}
+
